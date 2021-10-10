@@ -1,0 +1,11 @@
+wp-content/uploads
+sxswmediakit
+.env
+wp-content/themes/rosa-child/checkout/node_modules
+wp-content/themes/rosa-child/checkout/dist
+wp-content/themes/rosa-child/checkout/ts/test/testdata.json
+.DS_Store
+.idea/
+Thumbs.db
+.well-known
+.htaccess

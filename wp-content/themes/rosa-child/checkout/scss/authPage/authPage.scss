@@ -1,0 +1,107 @@
+#content {
+  .authPage {
+    .authContainer {
+      @include pageTopPositionWithEmptyNavBar;
+      min-height: 100vh;
+    }
+
+    .background {
+      width: 100%;
+      min-height: 100vh;
+      background-size: cover;
+      background-image: url(getAsset('background.jpg'));
+      background-repeat: no-repeat;
+      .overlay {
+        overflow: auto;
+        background: rgba(0, 0, 0, 0.5);
+        min-height: 100vh;
+      }
+    }
+
+    .formContainer {
+      width: 40%;
+      background-color: white;
+      border-radius: 8px;
+      margin: 10% 30%;
+      padding: 24px;
+
+      h1,
+      h2 {
+        text-align: center;
+      }
+
+      .header {
+        margin-bottom: 20px;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      input {
+        margin-bottom: 16px;
+      }
+      input[type='submit'],
+      input[type='button'] {
+        margin-top: 16px;
+        width: 100%;
+      }
+
+      .link {
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        text-decoration: underline;
+        font-weight: bold;
+        color: #3b4951;
+        font-family: $RobotoSlabLight;
+        height: auto;
+      }
+
+      .authSelectorOptions {
+        display: flex;
+        flex-direction: column;
+
+        button {
+          margin-top: 20px;
+          text-transform: uppercase;
+        }
+      }
+
+      .forgotPasswordOption {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .signUpOption {
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #d8d8d8;
+        padding-top: 16px;
+
+        p {
+          margin: 0;
+          font-weight: bold;
+          margin-right: 8px;
+        }
+      }
+
+      @media screen and (max-width: $mobile-break-point) {
+        width: 90%;
+        margin: 10% 5%;
+      }
+    }
+
+    .terms {
+      color: $whiteColor;
+      text-align: center;
+      margin: 0 5% 20px 5%;
+      a {
+        color: $whiteColor;
+        text-decoration: underline;
+        margin-left: 10px;
+      }
+    }
+  }
+}

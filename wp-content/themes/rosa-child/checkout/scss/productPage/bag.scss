@@ -1,0 +1,196 @@
+#content {
+  .bag {
+    position: relative;
+    width: 26%;
+    margin-right: $horizontalPadding;
+    display: none;
+
+    .desktopPosition {
+      position: fixed;
+      width: 26%;
+      height: calc(100vh - 206px);
+      min-height: 200px;
+      right: $horizontalPadding;
+      padding: 20px 0 10px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media only screen and (max-width: $minmargin-break-point) {
+        right: $minHorizontalPadding;
+      }
+    }
+
+    .mobilePosition {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      background-color: $lightOrangeColor;
+      border: 1px solid $grayColor2;
+      border-bottom: none;
+
+      h1 {
+        margin-bottom: 16px;
+        word-break: break-word;
+        font-family: $ProximaNova;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 36px;
+      }
+
+      .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .totals {
+          p {
+            margin-top: 2px;
+            margin-bottom: 2px;
+            font-family: $ProximaNova;
+          }
+        }
+        strong {
+          font-family: $ProximaNova;
+        }
+      }
+      @media only screen and (max-width: $mobile-break-point) {
+        display: none;
+      }
+      @media only screen and (max-height: 560px) {
+        h1 {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .modifiers {
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 10px;
+      width: 100%;
+      margin: 0;
+      flex: 2;
+      border: 1px solid $grayColor2;
+      border-top: none;
+      background-color: $whiteColor;
+
+      .emptyMessage {
+        @media only screen and (max-width: $mobile-break-point) {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        }
+      }
+
+      .modifier {
+        border-bottom: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 0;
+        h2 {
+          border-bottom: 1px solid $grayColor2;
+          padding-bottom: 8px;
+          margin-bottom: 20px;
+          font-family: $ProximaNova;
+          font-weight: bold;
+        }
+
+        .choice {
+          display: flex;
+          width: 100%;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+          .info {
+            display: flex;
+            flex-direction: column;
+            flex: 2;
+            h3 {
+              word-break: break-word;
+              font-family: $ProximaNova;
+            }
+          }
+          button {
+            background: transparent;
+            border: none;
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .addToBasketButton {
+      margin-top: 16px;
+      @media only screen and (max-width: $mobile-break-point) {
+        display: none;
+      }
+    }
+
+    .skippedElement {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: solid 1px $darkColor1;
+      }
+
+      h3 {
+        flex: 3;
+      }
+    }
+
+    @media only screen and (min-width: $mobile-break-point + 1) {
+      display: initial;
+    }
+
+    &.mobileVisible {
+      display: initial;
+      width: 100vw;
+      z-index: 999;
+      position: fixed;
+      top: 163px;
+      height: calc(100vh - 163px);
+      @media only screen and (max-width: 375px) {
+        top: 153px;
+        height: calc(100vh - 153px);
+      }
+      @media only screen and (max-width: 320px) {
+        top: 143px;
+        height: calc(100vh - 143px);
+      }
+    }
+  }
+}

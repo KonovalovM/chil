@@ -1,0 +1,93 @@
+.extraChoicesModal {
+  $widthModal: 400px;
+
+  padding: 24px 0 24px 0;
+  max-height: 70%;
+  width: $widthModal;
+  border-radius: $borderRadius;
+  background-color: $whiteColor;
+
+  .header {
+    display: flex;
+    align-items: center;
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-bottom: 20px;
+
+    h2 {
+      flex: 2;
+    }
+    button {
+      border-radius: 50%;
+      padding: 0;
+      width: 16px;
+      height: 16px;
+      background-color: $whiteColor;
+      border: none;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .choices {
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .choice {
+      display: flex;
+      align-items: center;
+      padding-right: 24px;
+      padding-left: 24px;
+      button {
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .info {
+        display: flex;
+        flex: 2;
+        justify-content: space-between;
+        margin-left: 17px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        box-shadow: inset 0 -1px 0 0 $grayColor2;
+      }
+      small {
+        white-space: nowrap;
+        margin-left: 10px;
+      }
+    }
+    .selected {
+      background-color: $lightOrangeColor;
+    }
+  }
+
+  .saveButtonContainer {
+    margin: 16px 24px 0 24px;
+
+    .saveButton {
+      background-color: $lightOrangeColor;
+      height: 58px;
+      width: 100%;
+      color: $darkColor1;
+      &.able {
+        color: $whiteColor;
+        background-color: $orangeColor;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $widthModal) {
+    width: 100%;
+  }
+}

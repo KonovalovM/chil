@@ -1,0 +1,62 @@
+.pixcode--tabs {
+	//    @extend %separator--section;
+	padding: $_u;
+	margin: -$_u;
+
+	padding-bottom: 0;
+}
+
+.tabs__nav {
+	@extend .nav;
+	@extend .nav--banner;
+
+	@include rem(margin-bottom, $_u);
+
+	// font-family: $heading-font-family;
+	// @include rem(font-size, 32px);
+	// letter-spacing: 0.01em;
+	// font-weight: bold;
+	// text-transform: uppercase;
+	@extend h2;
+
+	li{
+		border: $_u4 solid transparent;
+
+		&:last-child{
+			border: 0;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: $dark;
+		border-bottom: 3px solid transparent;
+
+		&.current, &:hover {
+			color: $accent;
+			border-color: $accent;
+		}
+	}
+}
+
+.tabs__content {
+	position: relative;
+	min-height: 1px;
+	@include transition(height .2s ease-in-out);
+	// overflow: hidden;
+}
+
+.tabs__pane {
+	width: 100%;
+	position: absolute;
+	@include transition(opacity .2s ease-in-out);
+	-webkit-backface-visibility: hidden;
+	@include transform(translate3d(0, 0, 0));
+	// @include rem(margin-right, $_u);
+	z-index: 20;
+
+	&.hide {
+		@include opacity(0);
+		z-index: 10;
+	}
+}

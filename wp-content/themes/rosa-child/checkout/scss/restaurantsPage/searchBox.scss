@@ -1,0 +1,44 @@
+#content {
+  .searchBox {
+    padding: 16px 24px 24px 24px;
+    width: 100%;
+
+    .inputs {
+      display: flex;
+      margin-top: 16px;
+
+      .textInput {
+        position: relative;
+        flex: 2;
+        input {
+          height: 100%;
+        }
+      }
+    }
+
+    .suggestions {
+      list-style-type: none;
+      border-left: solid 1px $grayColor1;
+      border-right: solid 1px $grayColor1;
+      border-bottom: solid 1px $grayColor1;
+      position: absolute;
+      background-color: $whiteColor;
+      box-shadow: 2px 2px 2px $grayColor1;
+      z-index: 999;
+      width: 100%;
+      margin: 0;
+
+      li {
+        padding: 5px 10px 5px 10px;
+        cursor: pointer;
+      }
+      li:hover,
+      .selected {
+        background-color: $lightOrangeColor;
+      }
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}

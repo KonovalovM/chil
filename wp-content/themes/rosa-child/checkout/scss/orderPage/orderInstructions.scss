@@ -1,0 +1,68 @@
+#content {
+  .orderInstructions {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(getAsset('background.jpg'));
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .orderInstructionsContainer {
+        width: 60%;
+        min-height: 60%;
+        display: flex;
+        padding: 16px;
+        background: $whiteColor;
+
+        .instructions {
+          padding: 16px;
+          border: 2px solid $orangeColor;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+
+          .header {
+            margin-bottom: 30px;
+          }
+
+          h1,
+          small,
+          p {
+            text-align: center;
+          }
+
+          .lineSeparator {
+            height: 2px;
+            width: 15%;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            background-color: $darkColor2;
+          }
+
+          a {
+            text-decoration: underline;
+          }
+        }
+
+        @media only screen and (max-width: $mobile-break-point) {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $mobile-break-point) {
+      height: $pageFixedHeight;
+    }
+  }
+}

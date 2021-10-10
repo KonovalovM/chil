@@ -1,0 +1,502 @@
+/*------------------------------------*\
+               NAVIGATION
+\*------------------------------------*/
+.navigation--main {
+	float: right;
+}
+
+/**
+ * Main Bar Navigation
+ */
+.nav--main {
+	@extend .cf;
+	display: inline-block;
+
+	margin-bottom: 0;
+
+	> li {
+
+		> a {
+			@include rem(padding, $_u2 $_u);
+			text-transform: uppercase;
+		}
+	}
+
+	a {
+		color: $dark;
+		@include font-size(14px);
+
+		@include transition(color .2s linear);
+
+		&:hover {
+			color: $accent;
+		}
+
+		.header--transparent & {
+			color: white;
+		}
+
+		.headroom--not-top &{
+			color: $dark;
+		}
+	}
+
+	@include media-query(lap-and-up){
+
+		> .current-menu-item > a:after {
+			content: "";
+			display: block;
+
+			border-bottom: 2px solid $dark;
+
+			.header--transparent & {
+				border-color: white;
+			}
+
+			.headroom--not-top &{
+				border-color: $dark;
+			}
+		}
+	}
+}
+
+.lt-ie9, .ie9 {
+	.header--transparent .nav--main a {
+		color: black;
+	}
+}
+
+.nav__item--relative {
+	position: relative;
+}
+
+.menu-item-has-children {
+	position: relative;
+
+	&:hover:after {
+		border-color: $accent;
+	}
+
+	&:after {
+		content: "";
+
+		position: absolute;
+		top: 50%;
+		right: $_u4;
+
+		margin-top: -2px;
+		display: inline-block;
+
+		width: 5px;
+		height: 5px;
+
+		border-right: 1px solid $dark;
+		border-bottom: 1px solid $dark;
+
+		.header--transparent & {
+			border-color: white;
+		}
+
+		.headroom--not-top & {
+			border-color: $dark;
+		}
+
+		@include transform(translateY(-50%) rotate(45deg));
+	}
+
+	&:hover > .sub-menu {
+		display: block;
+	}
+}
+
+//WPML Language switcher
+.menu-item-language {
+	@extend .menu-item-has-children;
+}
+
+
+
+
+
+/*----------------------------------------*\
+    $SUBMENUS
+\*----------------------------------------*/
+
+/*ul*/
+.sub-menu {
+	@extend .nav;
+	@extend .nav--stacked;
+
+	position: absolute;
+	top: 100%;
+	left: 50%;
+
+	display: none;
+	min-width: 170px;
+
+	text-align: center;
+
+	background: white;
+
+	@include transform(translateX(-50%));
+
+	.lt-ie9 & {
+		left: 0;
+		@include transform(none);
+	}
+
+	.header--transparent & {
+		background: transparent;
+
+		.lt-ie9 &, .ie9 & {
+			background: white;
+		}
+	}
+
+	.headroom--not-top &{
+		background: white;
+	}
+
+	a {
+		padding: $_u2;
+	}
+
+	.menu-item-has-children {
+		position: relative;
+
+		&:after {
+			right: $_u;
+
+			@include transform(rotate(-45deg));
+		}
+	}
+
+	.sub-menu {
+		left: 100%;
+		top: 0;
+
+		@include transform(translateX(0));
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    $MOBILE NAVIGATION
+\*------------------------------------*/
+
+a.nav-trigger{
+	position: absolute;
+	top: 36px;
+	left: $_u2;
+	@include transform(translateY(-50%));
+
+	padding: 0 $_u2;
+
+	font-size: 28px;
+	color: $dark;
+
+	@include media-query(lap-and-up) {
+		display: none;
+	}
+}
+
+$nav-width: 200px;
+
+@include media-query(lap-and-up) {
+
+	.navigation--main {
+		height: auto !important;
+	}
+}
+
+// Mobile navigation
+@include media-query(palm) {
+
+	.navigation--main {
+		position: fixed;
+		left: -$nav-width;
+		top: 0;
+		bottom: 0;
+
+		-webkit-overflow-scrolling: touch;
+
+		overflow-y: scroll;
+
+		width: $nav-width;
+		padding: $_u4 $_u2;
+
+		border: 0;
+
+		text-align: left;
+		text-transform: none;
+
+		background: $dark;
+
+		.nav--main li {
+			display: list-item;
+			padding: 0;
+
+			border-bottom: 1px solid #41403d;
+
+			&:last-child{
+				border-bottom: 0;
+			}
+
+			&.menu-item-has-children > a{
+				border-bottom: 1px solid #41403d;
+			}
+
+			text-align: left;
+
+			a{
+				padding: $_u2 0;
+				display: block;
+
+				@include font-size(18px);
+				text-transform: none;
+
+				color: #cccccc;
+
+				&:before{
+					content: none;
+				}
+			}
+
+			&.menu-item-has-children{
+				&:after{
+					content: none;
+				}
+
+				> a{
+					position: relative;
+				}
+
+				> a:after{
+					content: "";
+					position: absolute;
+					top: 50%;
+					right: 5px;
+
+					width: 10px;
+					height: 10px;
+
+					border-right: 1px solid #cccccc;
+					border-bottom: 1px solid #cccccc;
+
+					@include transform(translateY(-50%) rotate(45deg));
+				}
+			}
+		}
+
+		.sub-menu{
+			position: static;
+
+			display: block;
+			padding-left: $_u2;
+
+			border: 0;
+			background: transparent;
+
+			@include transform(translateX(0));
+
+			@include media-query(palm) {
+				background: transparent !important;
+			}
+		}
+
+		.sub-menu .sub-menu{
+			border: 0;
+		}
+	}
+
+	#page {
+		@include transition(transform .3s cubic-bezier(0.86, 0, 0.07, 1));
+	}
+
+	// I don't wanna do this anymore
+	// I don't wanna be the reason why
+	// Every time I seed this kind of code
+	// I feel I die a little more inside
+	.ie--winmob.navigation--is-visible {
+
+		#page {
+			position: fixed;
+			left: $nav-width;
+			@include transform(none);
+		}
+
+		.site-header {
+			position: fixed;
+			left: $nav-width;
+			top: 0;
+			@include transform(none);
+		}
+
+		.navigation {
+			position: fixed;
+		}
+
+		.navigation {
+			-ms-touch-action: pan-y;
+			overflow-y: auto;
+			height: 100%;
+			bottom: auto;
+		}
+	}
+
+	.mobile-ie {
+		#page, .site-header {
+			@include transition(none);
+		}
+	}
+
+
+	.navigation--is-visible {
+
+		#page {
+			@include transform(translateX($nav-width));
+		}
+	}
+
+	.is--winmob, .is--ancient-android, .is--ie {
+
+		.site-header,
+		.navigation--main,
+		#page {
+			@include transform(none !important);
+		}
+
+		.site-header {
+			position: absolute;
+		}
+
+		.navigation--main, .site-header, #page {
+			@include transition(none !important);
+		}
+
+		.navigation--main {
+			display: none;
+		}
+
+		&.navigation--is-visible {
+
+			#page {
+				@include transform(none);
+				left: $nav-width;
+			}
+
+			.navigation--main {
+				position: absolute;
+				display: block;
+				left: -1 * $nav-width;
+			}
+
+			.site-header {
+				left: 0;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    $ICONS, SHOP MENU ITEM
+\*------------------------------------*/
+
+.nav--items-social{
+
+	a{
+		padding-left: $_u2 !important;
+		padding-right: $_u2 !important;
+	}
+
+	i {
+		font-size: 14px;
+	}
+
+	@include media-query(palm){
+		margin-bottom: $_u;
+
+		.navigation--main & li{
+			display: inline-block;
+			border-bottom: 0;
+
+			&.menu-item-has-children > a{
+				border-bottom: 0;
+			}
+		}
+
+		ul.sub-menu{
+			display: none !important;
+		}
+	}
+
+	@include media-query(lap-and-up){
+		// margin-left: $_u2;
+		float: right;
+	}
+
+}
+
+.shop-menu-item{
+	&:after{
+		content: none;
+	}
+
+	.shop-items-number{
+		position: absolute;
+		right: 3px;
+		bottom: 3px;
+		
+		width: 16px;
+		height: 16px;
+
+		font-size: 10px;
+		line-height: 16px;
+		text-align: center;
+
+		color: white;
+		background-color: $accent;
+		@include border-radius(50%);
+	}
+
+	.shop-menu-item__price{
+		padding: $_u2 0;
+		display: block;
+
+		.header--transparent & {
+			color: white;
+		}
+
+		.headroom--not-top &{
+			color: $dark;
+		}
+	}
+
+	.navigation--main .nav--main &.menu-item-has-children > a:after{
+		content: none;
+	}
+
+	.cart-icon-link{
+		@include rem(padding, $_u2 $_u);
+		display: block;
+	}
+
+	.widget_shopping_cart_content{
+		display: inline-block;
+	}
+
+	&:hover{
+		.sub-menu{
+			display: block;
+		}
+	}
+}
+

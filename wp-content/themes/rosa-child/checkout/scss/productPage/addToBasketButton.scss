@@ -1,0 +1,13 @@
+#content {
+	.addToBasketButton {
+	  background-color: $lightColor2;
+	  height: 58px;
+	  color: $whiteColor;
+	  font-family: $ProximaNova;
+	  font-weight: bold;
+
+	  &.able {
+	    background-color: $orangeColor;
+	  }
+	}
+}

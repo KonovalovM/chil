@@ -1,0 +1,230 @@
+#content {
+  .productBuilder {
+    padding-left: $horizontalPadding;
+    padding-bottom: 30px;
+    width: 60%;
+
+    .modifiers {
+      padding-bottom: 50px;
+      @media only screen and (max-width: $mobile-break-point) {
+        margin-top: 0;
+      }
+    }
+
+    .modifier {
+      padding: 20px 0 0 0;
+      border-bottom: 1px solid $grayColor2;
+
+      h1 {
+        margin: 0 0 52px 0;
+        font-family: $ProximaNova;
+        font-weight: bold;
+        @media only screen and (max-width: $mobile-break-point) {
+          margin: 0 0 15px 0;
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+
+      .errorMessage {
+        min-height: 20px;
+        font-family: $ProximaNova;
+        @media only screen and (max-width: $mobile-break-point) {
+          min-height: unset;
+        }
+      }
+
+      .choicesContainer {
+        position: relative;
+        margin-top: 20px;
+      }
+
+      .choices {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        width: 100%;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        background-color: white;
+        cursor: not-allowed;
+      }
+    }
+
+    .choice {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 23%;
+      margin-right: 2%;
+      margin-bottom: 28px;
+
+      button {
+        padding: 0;
+        border: none;
+        background: none;
+        width: 100%;
+        height: unset;
+        outline: none;
+      }
+
+      .choiceImg {
+        width: 100%;
+        height: 0;
+        padding-top: 100%;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+
+        img {
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+        }
+        .visible {
+          opacity: 1;
+        }
+      }
+
+      h3 {
+        margin: 24px 0 0 0;
+        text-align: center;
+        word-break: break-word;
+        font-family: $ProximaNova;
+      }
+
+      strong {
+        min-height: 28px;
+        padding: 8px 0;
+        font-family: $ProximaNova;
+      }
+
+      &.notAvailable {
+        opacity: 0.5;
+        cursor: not-allowed;
+        button {
+          cursor: not-allowed;
+        }
+      }
+
+      @media only screen and (max-width: $mobile-break-point) {
+        width: 48%;
+      }
+    }
+
+    .quantity {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 6px solid $orangeColor; /*Compatibility with older browsers*/
+      border: #{'max(0.2vw, 6px)'} solid $orangeColor;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: $whiteColor;
+      font-family: $Oswald;
+      font-size: 70px;
+      font-weight: 500;
+      line-height: 48px;
+      opacity: 0;
+
+      @media only screen and (max-width: $mobile-break-point) {
+        font-size: 60px;
+      }
+    }
+
+    .check {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      border-radius: 50%;
+      border: 6px solid $orangeColor; /*Compatibility with older browsers*/
+      border: #{'max(0.2vw, 6px)'} solid $orangeColor;
+      padding: 10%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+    }
+
+    .optionButton {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 23%;
+      margin-bottom: 30px;
+      margin-right: 2%;
+
+      button {
+        padding: 0;
+        border: none;
+        background: none;
+        width: 100%;
+        height: unset;
+
+        .wrapper {
+          position: relative;
+          display: flex;
+          width: 100%;
+          height: 100%;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+
+        .border {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          border: 6px solid $orangeColor; /*Compatibility with older browsers*/
+          border: #{'max(0.2vw, 6px)'} solid $orangeColor;
+          opacity: 0;
+        }
+
+        .selected {
+          opacity: 1;
+        }
+      }
+      h3 {
+        margin: 24px 0 0 0;
+        text-align: center;
+        font-family: $ProximaNova;
+      }
+      @media only screen and (max-width: $mobile-break-point) {
+        width: 48%;
+      }
+    }
+
+    textarea {
+      font-family: $ProximaNova;
+    }
+
+    @media only screen and (max-width: $minmargin-break-point) {
+      padding-left: $minHorizontalPadding;
+    }
+
+    @media only screen and (max-width: $mobile-break-point) {
+      padding-right: $minHorizontalPadding;
+      padding-bottom: 100px;
+      width: 100%;
+    }
+  }
+}

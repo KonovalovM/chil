@@ -1,0 +1,79 @@
+#tw_page_sections {
+    display: none;
+}
+#tw_page_sections img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+#tw_page_sections .themeworks-available-sections {
+    display: inline-block;
+    margin-right: 5%;
+    width: 30%;
+    vertical-align: top;
+}
+#tw_page_sections .themeworks-available-sections ul {
+    max-height: 420px;
+    overflow-y: scroll;
+}
+#tw_page_sections .themeworks-available-sections li {
+    background: #f1f1f1;
+    margin-bottom: 1em;
+    padding: 1em;
+    text-align: center;
+}
+#tw_page_sections .themeworks-available-sections li a {
+    text-decoration: none;
+}
+#tw_page_sections .dashicons {
+    font-size: .8em;
+    height: .8em;
+    vertical-align: middle;
+}
+#tw_page_sections .section-label {
+    text-transform: capitalize;
+    display: block;
+    padding: .5em;
+}
+#tw_page_sections .themeworks-sortable-container {
+    max-width: 64%;
+    display: inline-block;
+    vertical-align: top;
+}
+#tw_page_sections .themeworks-page-builder-sortable {
+    background: #f1f1f1;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 0 #fff,0 1px 0 rgba(0,0,0,.08);
+    box-shadow: inset 0 1px 0 #fff,0 1px 0 rgba(0,0,0,.08);
+    min-height: 100px;
+}
+#tw_page_sections .themeworks-sortable-container .help-text {
+    text-align: center;
+    margin-top: 36px;
+}
+#tw_page_sections .active-section {
+    position: relative;
+    padding: 1em;
+}
+#tw_page_sections .tw-delete-section {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    padding: 0.5em;
+    background: #fff;
+    background: rgba( 256, 256, 256, .5);
+    color: red;
+    opacity: 0.8;
+    z-index: 100;
+    display: none;
+}
+#tw_page_sections .active-section:hover > .tw-delete-section {
+    display: block;
+}
+#tw_page_sections .tw-delete-section:hover {
+    opacity: 1;
+    background: rgba( 256, 256, 256, .7);
+}
+#tw_page_sections .drag-handle {
+    cursor: move;
+}

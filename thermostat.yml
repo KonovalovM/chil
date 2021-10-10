@@ -1,0 +1,80 @@
+version: '0.0.1'
+
+services:
+  php-7.3:
+    enabled: true
+  nginx:
+    conf: config/nginx/nginx.dev.conf
+  mariadb:
+    database: chilantro
+    password:
+      envfile: .env:DB_PASSWORD
+
+data_links:
+  .env: .env
+  wp-content/uploads: wp-content/uploads
+  sxswmediakit: sxswmediakit
+  testdata.json: wp-content/themes/rosa-child/checkout/ts/test/testdata.json
+
+scripts:
+  build:
+    image: fahrenheitmarketing/dev-tools:0.0.12
+    script:
+      - cd wp-content/themes/rosa-child/checkout
+      - yarn
+      - yarn build
+  watch:
+    image: fahrenheitmarketing/dev-tools:0.0.12
+    script:
+      - cd wp-content/themes/rosa-child/checkout
+      - yarn
+      - yarn watch
+  checkout:
+    image: fahrenheitmarketing/dev-tools:0.0.12
+    script:
+      - cd wp-content/themes/rosa-child/checkout
+      - yarn $THERMOSTAT_SCRIPT_ARGS
+
+environments:
+  staging:
+    services:
+      php-7.3:
+        enabled: true
+      nginx:
+        conf: config/nginx/nginx.stage.conf
+      mariadb:
+        database: chilantro-staging
+        password:
+          envfile: .env:DB_PASSWORD
+      certbot:
+        domains:
+          - staging.chilantrobbq.com
+
+  staging-prod:
+    services:
+      php-7.3:
+        enabled: true
+      nginx:
+        conf: config/nginx/nginx.stage-prod.conf
+      mariadb:
+        database: chilantro-staging-prod
+        password:
+          envfile: .env:DB_PASSWORD
+      certbot:
+        domains:
+          - staging-prod.chilantrobbq.com
+
+  production:
+    services:
+      php-7.3:
+        enabled: true
+      nginx:
+        conf: config/nginx/nginx.prod.conf
+      mariadb:
+        database: chilantro-production
+        password:
+          envfile: .env:DB_PASSWORD
+      certbot:
+        domains:
+          - chilantrobbq.com
+          - www.chilantrobbq.com

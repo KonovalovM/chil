@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation</title>
+
+<meta name="robots" content="noindex,follow" />
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<style>
+    .site-header {
+        background: #222;
+        color: #fff;
+        padding: 4em 0 3em 0;
+    }
+    .site-header .site-utilities .site-branding {
+        float: none;
+        max-width: 100%;
+        text-align: center;
+    }
+    .site-header .main-navigation {
+        display: none;
+        max-width: 100%;
+    }
+    .site-header .main-navigation ol,
+    .main-navigation ol li {
+        float: none;
+    }
+    .trigger {
+        text-align: center;
+    }
+    .trigger,
+    .main-navigation ol li a {
+        color: #aaa;
+        display: block;
+    }
+    .trigger:hover,
+    .main-navigation ol li a:hover {
+        color: #fff;
+    }
+    .trigger .genericon-expand {
+        margin-top: 3px;
+    }
+    h3 {
+        margin: 3em 0 1em;
+    }
+    img {
+        border: 1px solid #ddd;
+        padding: 5%;
+        max-width: 90%;
+        background: #fafafa;
+        display: block;
+        margin: 0 auto;
+    }
+    .site-footer .site-info {
+        padding: 3em 4%;
+    }
+    @media screen and (max-width: 768px) {
+        .site-header .main-navigation {
+            position: relative;
+        }
+    }
+</style>
+<script>
+jQuery(document).ready(function($){
+
+    // generic trigger & toggle
+    $('.trigger').on('click', function(){
+        $('.toggle').toggle('fast');
+    });
+
+    var html = '';
+    $('#main').find('h3').each(function(){
+        var text = $(this).text()
+        text = text.toLowerCase().replace(/ /g, '-');
+        html += '<li><a href="#' + text + '">' + $(this).text() + '</a></li>';
+    });
+
+    $('#menu').append(html);
+
+});
+</script>
+</head>
+
+<body>
+<div id="page" class="hfeed site">
+    <header id="masthead" class="site-header" role="banner">
+        <div class="container">
+            <div class="site-utilities">
+                <div class="site-branding">
+                    <h1>Theme Documentation</h1>
+                </div>
+                <a href="javascript:void(0);" class="trigger" id="legend"><span class="genericon genericon-expand"></span> Quick Links</a>
+                <nav id="site-navigation" class="toggle main-navigation" role="navigation">
+                    <div class="menu-container">
+                        <ol id="menu" class="primary-menu"></ol>
+                    </div>
+                </nav><!-- #site-navigation -->
+            </div><!-- .site-utilities -->
+        </div>
+    </header><!-- #masthead -->
+
+    <div id="content" class="site-content">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+                <div class="container">
+                    <h3 id="installation">Installation</h3>
+<p>To use this WordPress theme, you must have WordPress installed on your web hosting account. If you don&#39;t have web hosting yet, you&#39;ll need to take care of that first. We recommend <a href="http://graphpaperpress.com/wordpress-web-hosting/">these great web hosts</a>, which offer one-click installations of WordPress.</p>
+<p>If you already have a web hosting account, but don&#39;t have WordPress installed on your server, visit WordPress.org and follow the installation instructions.</p>
+<p>Once you have WordPress installed, follow these instructions for installing your new theme:</p>
+<ol>
+<li>Log in to your WordPress dashboard. This can be found at yourdomain.com/wp-admin</li>
+<li>Go to Appearance &rarr; Themes and click on the <em>Install Themes</em> tab</li>
+<li>Click on the <em>Upload</em> link</li>
+<li>Upload the zip file that you downloaded and click <em>Install Now</em></li>
+<li>Click <em>Activate</em>.</li>
+</ol>
+<p><em>Please Note: If you have your homepage set to a static page, you&#39;ll need to change that now. So go to Settings &rarr; Reading and make sure that &quot;Front page displays&quot; option is set to &quot;Your latest posts&quot;.</em></p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-install-1.jpg" alt="Installing your theme 1">
+<img src="https://themeworks.s3.amazonaws.com/images/themeworks-install-2.jpg" alt="Installing your theme 2">
+<img src="https://themeworks.s3.amazonaws.com/images/themeworks-install-3.jpg" alt="Installing your theme 3"></p>
+<h3 id="media-settings">Media Settings</h3>
+<p>Go to Settings &rarr; Media and change the options to:</p>
+<ul>
+<li>Thumbnail size<ul>
+<li>Width: 150</li>
+<li>Height: 150</li>
+<li>[checked] Crop thumbnails to exact dimensions (normally thumbnails are proportional)</li>
+</ul>
+</li>
+<li>Medium size<ul>
+<li>Max Width: 800</li>
+<li>Max Height: 0</li>
+</ul>
+</li>
+<li>Large size<ul>
+<li>Max Width: 1200</li>
+<li>Max Height: 0</li>
+</ul>
+</li>
+<li>Embeds<ul>
+<li>[checked] When possible, embed the media content from a URL directly onto the page. For example: links to Flickr and YouTube.</li>
+<li>Maximum embed size<ul>
+<li>Width: 1200</li>
+<li>Height: 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>Please Note: If you are switching from another theme or need to resize old images, install and run <a href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a>.</em></p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-media-settings.jpg" alt="Media Settings"></p>
+<h3 id="importing-sample-content">Importing Sample Content</h3>
+<p><a href="https://themeworks.s3.amazonaws.com/sample-content/themeworks.wordpress.2015-02-03.xml">Download this XML file</a> if you want to import sample content from our demo site. Only do this after you have configured your Media Settings (see above). To import this file into your WordPress site follow these instructions:</p>
+<ol>
+<li>Visit Tools -&gt; Import</li>
+<li>Upload the WordPress XML file</li>
+<li>Depending on the design you created, some post types (Services, Testimonials, etc) might not import. This is expected behavior, so don&#39;t worry if you get a &quot;Failed to import...&quot; message.</li>
+</ol>
+<h3 id="customizer">Customizer</h3>
+<p>The Customizer (Appearance -&gt; Customize) is where you will customize the design of your website. The Customizer contains dozens of options for logos, slides, welcome messages, background images, header images, newsletter signup form integration, color schemes, fonts, menus and widgets. Here you can preview your changes before making them publicly visible.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-customizer.gif" alt="Theme Customizer"></p>
+<h3 id="menus">Menus</h3>
+<p>Menus can be created by visiting Appearance &rarr; Menus. To add a new menu to your site:</p>
+<ol>
+<li>Go to Appearance &rarr; Menus.</li>
+<li>Create a new menu item by clicking the &quot;Create a new menu&quot; link.</li>
+<li>Select the pages you want to display in your menu and click the Add to Menu button. If you do not see the type of page (category, tag, portfolio, gallery, etc) you want to display, click the Screen Options link at the top of the page and make sure the page type is checked.</li>
+<li>Once you have set your menu as you want it, click the Save Menu button.</li>
+<li>Then, assign that menu to your desired theme location to ensure your menu appears where you want it and click Save.</li>
+</ol>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-menus.jpg" alt="Menus">
+<img src="https://themeworks.s3.amazonaws.com/images/themeworks-menu-position.jpg" alt="Menu Position"></p>
+<h3 id="widgets">Widgets</h3>
+<p>You can add Widgets to your theme by visiting Appearance &rarr; Widgets. This theme supports Sidebar and Footer widget positions by default. If you chose additional Homepage Widgets when you originally created your site at Theme.Works, they will be displayed on the homepage. Each Homepage Widget will be displayed in either a 1, 2, 3 or 4 column layout, depending on which design you selected when you created your site.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-widgets.jpg" alt="Widgets"></p>
+<h3 id="social-media">Social Media</h3>
+<p>You can add social media icons to both the top and bottom of your site by visting Appearance &rarr; Customize &rarr; General &rarr; Social Media.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-social.jpg" alt="Social"></p>
+<h3 id="featured-images">Featured Images</h3>
+<p>This theme relies heavily on a feature called &quot;Featured Images&quot; in WordPress. If your post is missing a Featured Image, the post may not appear on the homepage or on archive pages, depending on the specific design of your theme.</p>
+<p>To choose the image you want to set as a featured image for a post or page, click the <em>Set as Featured Image</em> button at the right of the page. For best results use images that are at least 1200 px wide.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-featured-image.jpg" alt="Featured Image"></p>
+<h3 id="inserting-galleries">Inserting Galleries</h3>
+<p>You can create an image gallery by using the native Add Media -&gt; Create Gallery feature on a WordPress post or page. By default, all galleries will be displayed as slideshows, like <a href="https://theme.works/demo/slideshow/?header=13&amp;footer=10">this slideshow example</a>. If you&#39;d prefer a different gallery layout, then install the free JetPack.me plugin and follow their <a href="http://jetpack.me/support/photos-and-videos/">instructions</a> for selecting a gallery style of your choice.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-gallery.jpg" alt="Inserting Galleries"></p>
+<h3 id="header-images">Header Images</h3>
+<p>This theme supports both a site-wide header image and header images on a per-post or per-page basis. To add a Header Image for your site, visit the Appearance &rarr; Header page or the Appearance &rarr; Customize &rarr; Header. You can change the color of the text appearing on top of your header image by picking a color on that page.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-header.jpg" alt="Header Image"></p>
+<p>Each Post and Page can also have a custom header image. The Custom Header box appears right above the Featured Image box, which is located on the right side of the page. You can change the color of the text appearing on top of your header image by picking a color on that page.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-header-single.jpg" alt="Single Header Image"></p>
+<h3 id="background-images">Background Images</h3>
+<p>This theme supports custom background images. To add a Background Image for your site, visit Appearance &rarr; Background or Appearance &rarr; Customize &rarr; Colors &rarr; Background Image.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-background.jpg" alt="Background Image"></p>
+<h3 id="page-templates">Page Templates</h3>
+<p>Page Templates allow you to create specific pages with specific design and functionality purposes. To use Page Templates, create a new page in Pages &rarr; Add New. Choose a template from the Page Attributes &rarr; Templates section at the right, below the Publish box. You do not need to add any content to the content area. Publish the page.</p>
+<p>This theme comes with the following Page Templates:</p>
+<ol>
+<li>Archives - Displays a listing of category and date-based archives.</li>
+<li>Blog - Displays your posts on a page.</li>
+<li>Wide - A full-width page template without a sidebar.</li>
+<li>Narrow - A narrow page template without a sidebar.</li>
+<li>Portfolio (1 Column) - Displays portfolio entries in a one column layout.</li>
+<li>Portfolio (2 Column) - Displays portfolio entries in a two column layout.</li>
+<li>Portfolio (3 Column) - Displays portfolio entries in a three column layout.</li>
+<li>Portfolio (4 Column) - Displays portfolio entries in a four column layout.</li>
+<li>Team - Displays a list of users who you have assigned as &quot;Staff&quot;. The page will also display relevant biographical and social media links for each staff member. You can mark users as staff by editing their profile page in WordPress (Users &rarr; Your Profile or Users &rarr; All Users &rarr; Edit).</li>
+<li>Page Builder - Allows you to create a custom page using the section designs that you originally selected when you created your theme at Theme.Works. See the &quot;Page Builder&quot; section below for details.</li>
+</ol>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-page-templates.jpg" alt="Page Templates"></p>
+<h3 id="homepage">Homepage</h3>
+<p>By default, the homepage will display the design that you created at Theme.Works. You can, however, choose to display a different page to be your homepage by visiting the Settings &rarr; Reading or the Appearance &rarr; Customize pages and assigning a static front page. For example: To use one of your Portfolio pages as your homepage, create a new page in Pages &rarr; Add New. Assign this page to one of the Portfolio page templates in the Page Attributes &rarr; Templates section at the right. You do not need to add any content to the content area. Publish the page. It will display any Portfolio entries that you have added via Portfolios &rarr; Add New.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-reading-settings.jpg" alt="Reading Settings"></p>
+<h3 id="page-builder">Page Builder</h3>
+<p>The Page Builder feature allows you to create new page designs by adding and reorganizing sections you selected when you originally created your theme at Theme.Works.</p>
+<p>How to use the page builder:</p>
+<ol>
+<li>From your WordPress dashboard, add a new page (or edit an existing page).</li>
+<li>Change page template to Page Builder.</li>
+<li>Click a section button under &quot;Your Design Options&quot; to add a section. Drag and drop added sections to reorganize.</li>
+</ol>
+<p>If you&#39;d like to assign this new page to be your homepage, simply visit the Settings &rarr; Reading or the Appearance &rarr; Customize pages and assign this new page to be front page.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-page-builder.gif" alt="Builder"></p>
+<h3 id="post-formats">Post Formats</h3>
+<p>This theme supports the following post formats &mdash; gallery, image, video, quote and standard &mdash; which are unique layouts for specific types of posts. Each post format has its own unique layout on the homepage, on its archive page and on the individual single post pages. While all the post formats work with default behaviour, here are some that have unique characteristics:</p>
+<h6 id="gallery-post-format">Gallery Post Format</h6>
+<p>To show a slideshow of images (an image gallery), upload as many images as you like using the media uploader tool and insert the Gallery into the post. Be sure to assign a Featured Image for that post. For best results, use images that are at least 800 pixels wide. All posts assigned to the Gallery Post Format will then display the Gallery at the top of the post, with any text added into your post&#39;s edit page displayed below.</p>
+<p>To insert a gallery:</p>
+<ol>
+<li>Switch to the Gallery tab.</li>
+<li>Click the Add Media button to launch the Media Uploader tool.</li>
+<li>Click the Create Gallery option.</li>
+<li>You can choose to upload images from your computer or you can use images that already exist in your Media Library. You cannot use an image from a URL on the web in your gallery.</li>
+<li>If you are uploading images, click the Select Files button and navigate to each of your images on your computer. Click the Open button to open each image.</li>
+<li>Once each of your images has been uploaded, you will have the option to add a title, caption, alternative text and description.</li>
+<li>After you have added all of the images you wish to display in the gallery, switch to your media library tab and select those images.</li>
+<li>Then, click the Create a New Gallery button.</li>
+<li>Set a featured image for your Gallery.</li>
+</ol>
+<h6 id="video-post-format">Video Post Format</h6>
+<p>To display a video in your post, switch to the Video tab. Paste your video&#39;s embed code in the Video URL or Embed Code field. The video will display above all post content on the homepage, single, and archive pages. This works for all interactive elements (videos, maps, panoramas) that have embed code. You can also add additional interactive elements into the content area, though these will appear inside the content area, rather than above it.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-post-formats.jpg" alt="Post Formats"></p>
+<h3 id="video">Video</h3>
+<p>For externally hosted videos (for example a YouTube or Vimeo video), you can directly paste the link of your video page into the content editor. You do not have to paste the embed code. WordPress will automatically embed the video from the link.</p>
+<p>You can easily embed videos from a Video hosting service such as Vimeo or YouTube into your posts or pages.</p>
+<p>To add a video:</p>
+<ol>
+<li>From your WordPress dashboard, add a new post or page (or edit an existing post or page).</li>
+<li>Paste in your video&#39;s URL, for example https://vimeo.com/31985752.</li>
+<li>Publish or Update your post or page.</li>
+</ol>
+<p><em>Please note: If your video is not appearing correctly, remove the ‘s’ from the URL, so https becomes http. You can also toggle the editor into Text mode (see screenshot below) to help remove any hidden characters from your video link url.</em></p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-video.jpg" alt="Video"></p>
+<h3 id="shortcodes">Shortcodes</h3>
+<p>Shortcodes enable you to easily add buttons, icons, pricing tables and more without modifying CSS, HTML or PHP.</p>
+<p>There are 8 shortcodes included in this theme:</p>
+<ol>
+<li>Contact form</li>
+<li>Grid</li>
+<li>Dropcap</li>
+<li>Button</li>
+<li>Icon</li>
+<li>Box</li>
+<li>Highlight</li>
+<li>Divider</li>
+<li>Pricing table</li>
+<li>Signup form</li>
+</ol>
+<p>See live examples here: <a href="https://theme.works/demo/shortcodes/?header=13&amp;footer=10">Shortcodes</a></p>
+<p>Below is a list of all the shortcodes and instructions on how to use each one.</p>
+<h5 id="contact-form">Contact form</h5>
+<p>This generates a nice contact form that you can add to any page.</p>
+<p>Usage: <code>[tw_contact_form]</code></p>
+<h5 id="grid">Grid</h5>
+<p>Use these grid shortcodes to create any combination of two, three, four or five column grid layouts. Note: You cannot have any spaces or returns between your grid column shortcodes, otherwise, they won&#39;t align properly.</p>
+<p>Usage (two columns): <code>[tw_grid cols=&quot;2&quot;]First column content[/tw_grid][tw_grid cols=&quot;2&quot;]Second column content[/tw_grid]</code></p>
+<p>Usage (three columns): <code>[tw_grid cols=&quot;3&quot;]First column content[/tw_grid][tw_grid cols=&quot;3&quot;]Second column content[/tw_grid][tw_grid cols=&quot;3&quot;]Third column content[/tw_grid]</code></p>
+<p>Usage (four columns): <code>[tw_grid cols=&quot;4&quot;]First column content[/tw_grid][tw_grid cols=&quot;4&quot;]Second column content[/tw_grid][tw_grid cols=&quot;4&quot;]Third column content[/tw_grid][tw_grid cols=&quot;4&quot;]Fourth column content[/tw_grid]</code></p>
+<p>Usage (five columns): <code>[tw_grid cols=&quot;5&quot;]First column content[/tw_grid][tw_grid cols=&quot;5&quot;]Second column content[/tw_grid][tw_grid cols=&quot;5&quot;]Third column content[/tw_grid][tw_grid cols=&quot;5&quot;]Fourth column content[/tw_grid][tw_grid cols=&quot;5&quot;]Fifth column content[/tw_grid]</code></p>
+<p>Attributes: cols</p>
+<p>Available cols options: 2, 3, 4, 5.</p>
+<h5 id="button">Button</h5>
+<p>Creates a button with custom attributes below.</p>
+<p>Usage: <code>[tw_button url=&quot;http://www.theme.works&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot; class=&quot;your-css-class&quot;]Button text[/tw_button]</code></p>
+<p>Attributes: url, title, target, rel, class</p>
+<h5 id="dropcap">Dropcap</h5>
+<p>Drop caps are typically used to offset the first letter of the first paragraph from the rest of the text.</p>
+<p>Usage: <code>[tw_dropcap size=&quot;64px&quot; color=&quot;#ff0000&quot;]G[tw_dropcap]</code></p>
+<p>Attributes: size, color</p>
+<h5 id="icon">Icon</h5>
+<p>Display a variety of different icons, colrs and sizes using the attributes below.</p>
+<p>Usage: <code>[tw_icon type=&quot;twitter&quot; size=&quot;32px&quot; color=&quot;#000000&quot;]</code></p>
+<p>Attributes: type, size, color</p>
+<p>Availabe types: standard, aside, image, gallery, video, status, quote, link, chat, audio, github, dribbble, twitter, facebook, facebook-alt, wordpress, googleplus, linkedin, linkedin-alt, pinterest, pinterest-alt, flickr, vimeo, youtube, tumblr, instagram, codepen, polldaddy, googleplus-alt, path, skype, digg, reddit, stumbleupon, pocket, dropbox, foursquare, comment, category, tag, time, user, day, week, month, pinned, search, unzoom, zoom, twitter, show, hide, close, close-alt, trash, star, home, mail, edit, reply, feed, warning, summary, cloud, key, dot, next, previous, expand, collapse, dropdown, dropdown-left, top, draggable, phone, send-to-phone, plugin, cloud-download, cloud-upload, external, document, book, cog, unapprove, cart, pause, stop, skip-back, skip-ahead, play, tablet, send-to-tablet, info, notice, help, fastforward, rewind, portfolio, heart, code, subscribe, unsubscribe, subscribed, reply-alt, reply-single, flag, print, lock, bold, italic, picture, fullscreen, website, ellipsis, uparrow, rightarrow, downarrow, leftarrow, xpost, hierarchy, paintbrush, sitemap</p>
+<h5 id="box">Box</h5>
+<p>Wraps content inside of a box, which you can style using the attributes below.</p>
+<p>Usage: <code>[tw_box color=&quot;#000000&quot; background=&quot;#CCCCCC&quot; float=&quot;right&quot; text_align=&quot;center&quot; width=&quot;50%&quot; margin_top=&quot;20px&quot; margin_bottom=&quot;40px&quot; class=&quot;my-css-class&quot;]Your content here[/tw_box]</code></p>
+<p>Attributes: color, background, float, text_align, width, margin_top, margin_bottom, class</p>
+<h5 id="highlight">Highlight</h5>
+<p>A simple shortcode to highlight a block of text.</p>
+<p>Usage: <code>[tw_highlight background=&quot;#CCCCCC&quot; class=&quot;my-css-class&quot;]Your content here[/tw_highlight]</code></p>
+<p>Attributes: background, class</p>
+<h5 id="dividers">Dividers</h5>
+<p>Creates a single horizontal line, which you can style using the attributes below.</p>
+<p>Usage: <code>[tw_divider type=&quot;dotted&quot; margin_top=&quot;20px&quot; margin_bottom=&quot;40px&quot; class=&quot;my-css-class&quot;]</code></p>
+<p>Attributes: type, margin_top, margin_bottom, class</p>
+<p>Availabe types: solid, dashed, dotted, double, royal</p>
+<h5 id="pricing-table">Pricing table</h5>
+<p>Use this to create a single pricing table layout. Tip: Use the grid shortcode above and include a pricing table inside each one to create a pricing table with multiple options.</p>
+<p>Usage: <code>[tw_pricing plan=&quot;Basic&quot; cost=&quot;$100&quot; per=&quot;per month&quot; button_url=&quot;http://www.theme.works&quot; button_text=&quot;Purchase&quot; button_target=&quot;self&quot; button_rel=&quot;nofollow&quot;]&lt;ul&gt;&lt;li&gt;30GB Storage&lt;/li&gt;&lt;li&gt;512MB Ram&lt;/li&gt;&lt;li&gt;10 databases&lt;/li&gt;&lt;li&gt;1,000 Emails&lt;/li&gt;&lt;li&gt;25GB Bandwidth&lt;/li&gt;&lt;/ul&gt;[/tw_pricing]</code></p>
+<p>Attributes: color, featured, plan, cost, per, button_url, button_text, button_target, button_rel, class</p>
+<h5 id="signup-form">Signup form</h5>
+<p>Use this shortcode to display a newsletter signup form in Posts, Pages and in Widgets.</p>
+<p>Usage: <code>[tw_signup display=&quot;inline&quot; location=&quot;sidebar&quot; message=1 ][/tw_signup]</code></p>
+<p>Attributes: display, location, message</p>
+<p>Available display options: inline, block
+Avaialble location options: header, sidebar, footer, content (use for css targeting and styling)
+Available message options: 1 to show, 0 to hide the the signup message.</p>
+<h3 id="action-hooks">Action Hooks</h3>
+<p>Action hooks are a means of providing a way for developers to insert their own code into specific locations within the theme without hacking the core theme files. For example, if you wanted to put a custom message at the top of your site, you could use the <em>tw_header_above_hook</em>. You have two options for where you put your action hook code:</p>
+<ol>
+<li>A functionality plugin - <a href="http://wpcandy.s3.amazonaws.com/resources/sample-functionality-plugin.zip">download blank example plugin</a>.</li>
+<li>A child theme (specifically in the functions.php file) - <a href="http://graphpaperpress.com/wordpress-child-theme-generator/">create yours now</a>.</li>
+</ol>
+<h5 id="example-add-message-above-header">Example - Add message above header</h5>
+<pre><code>function my_custom_header_message(){
+    echo &#39;&lt;div class=&quot;my-custom-header-message&quot;&gt;&#39;;
+    echo &#39;&lt;p&gt;Hello there! This is my custom header message&lt;/p&gt;&#39;;
+    echo &#39;&lt;/div&gt;&#39;;
+}
+add_action( &#39;tw_header_above_hook&#39;, &#39;my_custom_header_message&#39; );
+</code></pre><p>Available action hooks:</p>
+<ol>
+<li>tw_header_above_hook</li>
+<li>tw_header_below_hook</li>
+<li>tw_footer_above_hook</li>
+<li>tw_footer_below_hook</li>
+<li>tw_blog_above_hook</li>
+<li>tw_blog_below_hook</li>
+<li>tw_client_above_hook</li>
+<li>tw_client_below_hook</li>
+<li>tw_contact_above_hook</li>
+<li>tw_contact_below_hook</li>
+<li>tw_ecommerce_above_hook</li>
+<li>tw_ecommerce_below_hook</li>
+<li>tw_portfolio_above_hook</li>
+<li>tw_portfolio_below_hook</li>
+<li>tw_service_above_hook</li>
+<li>tw_service_below_hook</li>
+<li>tw_signup_above_hook</li>
+<li>tw_signup_below_hook</li>
+<li>tw_signup_above_form_hook</li>
+<li>tw_signup_below_form_hook</li>
+<li>tw_slideshow_above_hook</li>
+<li>tw_slideshow_below_hook</li>
+<li>tw_social_above_hook</li>
+<li>tw_social_below_hook</li>
+<li>tw_testimonial_above_hook</li>
+<li>tw_testimonial_below_hook</li>
+<li>tw_widget_above_hook</li>
+<li>tw_widget_below_hook</li>
+</ol>
+<h3 id="filters">Filters</h3>
+<p>Filters allow you to change existing elements of Theme.Works themes. For example, if you wanted to change the &quot;Portfolio&quot; title on the homepage to &quot;My Work,&quot; you would add a filter. And here is the code to do this:</p>
+<pre><code>function my_portfolio_title(){
+    return &#39;My Work&#39;;
+}
+add_filter( &#39;tw_portfolio_title&#39;, &#39;my_portfolio_title&#39; );
+</code></pre><p><a href="https://gist.github.com/thadallender/bce2f82bdc92fa9a6ff8">Here is a GIST</a> containing examples for filtering all section titles and some additional text.</p>
+<p>You can also use filters to change the number of entries in sections on the homepage. For example, if you wanted to change the number of portfolio entries to 12, you would do this:</p>
+<pre><code>function my_portfolio_args_filter(){
+    $args = array(
+        &#39;post_type&#39; =&gt; &#39;portfolio&#39;,
+        &#39;posts_per_page&#39; =&gt; 12,
+        &#39;ignore_sticky_posts&#39; =&gt; true,
+        &#39;paged&#39; =&gt; $paged
+    );
+
+    return $args;
+}
+add_filter( &#39;tw_portfolio_args_filter&#39;, &#39;my_portfolio_args_filter&#39; );
+</code></pre><p>All section titles and section query arguments can be filtered. This gives you maximum flexilblity. For example, you could even use the Portfolio section design and simply change the Post Type to, say, Posts instead of Portfolio if you want:</p>
+<pre><code>function my_portfolio_args_filter(){
+    $args = array(
+        &#39;post_type&#39; =&gt; &#39;post&#39;,
+        &#39;posts_per_page&#39; =&gt; 12,
+        &#39;ignore_sticky_posts&#39; =&gt; true,
+        &#39;paged&#39; =&gt; $paged
+    );
+
+    return $args;
+}
+add_filter( &#39;tw_portfolio_args_filter&#39;, &#39;my_portfolio_args_filter&#39; );
+</code></pre><p>Available Title Filters:</p>
+<ol>
+<li>tw_blog_title</li>
+<li>tw_client_title</li>
+<li>tw_contact_title</li>
+<li>tw_ecommerce_title</li>
+<li>tw_portfolio_title</li>
+<li>tw_service_title</li>
+<li>tw_signup_title</li>
+<li>tw_social_title</li>
+<li>tw_testimonial_title</li>
+</ol>
+<p>Available Text Filters:</p>
+<ol>
+<li>tw_ecommerce_button_text</li>
+</ol>
+<p>Available Query Argument Filters:</p>
+<ol>
+<li>tw_blog_args_filter</li>
+<li>tw_client_args_filter</li>
+<li>tw_ecommerce_args_filter</li>
+<li>tw_service_args_filter</li>
+<li>tw_testimonial_args_filter</li>
+</ol>
+<h3 id="services">Services</h3>
+<p>To add a new Service, click on Services &rarr; Add New. Give your service entry a title, add some text to the editor field and set a featured image. To modify the order in which your Services are displayed on your website, simply modify the publish date of each entry. The most recent entry will show up first.</p>
+<p><img src="https://themeworks.s3.amazonaws.com/images/themeworks-service.jpg" alt="Service"></p>
+
+                </div>
+            </main><!-- #main -->
+        </div><!-- #primary -->
+    </div><!-- #content -->
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="site-info">
+            <div class="container">
+                <ul id="social" class="social">
+                    <li><a href="http://twitter.com/graphpaperpress" class="social-twitter" title="twitter"><span class="genericon genericon-twitter"></span></a></li>
+                    <li><a href="http://facebook.com/gppthemes" class="social-facebook" title="facebook"><span class="genericon genericon-facebook"></span></a></li>
+                </ul>
+                Contact us: info@theme.works
+            </div><!-- .container -->
+        </div><!-- .site-info -->
+    </footer><!-- #colophon -->
+</div><!-- #page -->
+
+
+</body>
+</html>

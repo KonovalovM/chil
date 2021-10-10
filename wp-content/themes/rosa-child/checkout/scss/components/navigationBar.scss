@@ -1,0 +1,221 @@
+@mixin bar {
+  background-color: $lightBlueColor;
+  height: $navigationBarHeight;
+  width: 100%;
+  display: flex;
+}
+
+#content {
+  .fixedBar {
+    position: fixed;
+    top: $headerHeight;
+    width: 100%;
+    z-index: 200;
+    /*The wordpress header height decrese so the fixed bar should go up*/
+    @media only screen and (max-width: $mobile-break-point) {
+      top: $headerHeight - 10px;
+    }
+    @media only screen and (max-width: $mobile-break-point2) {
+      top: $headerHeight - 20px;
+    }
+    @media only screen and (max-width: $mobile-break-point3) {
+      top: $headerHeight - 30px;
+    }
+  }
+
+  .navigationBar {
+    @include bar;
+    position: relative;
+
+    .buttonGroup {
+      position: absolute;
+      right: 0;
+      padding-right: $horizontalPadding;
+      background-color: $lightBlueColor;
+      height: 100%;
+      padding-left: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .leftBorder {
+      border-left: 1px solid $whiteColor;
+    }
+
+    @media only screen and (max-width: $minmargin-break-point) {
+      padding: 0 $minHorizontalPadding 0 0;
+      .buttonGroup {
+        padding-right: $minHorizontalPadding;
+      }
+    }
+  }
+
+  .onLeft {
+    margin-left: 16px;
+  }
+
+  .sectionSideBar {
+    $modal-width: 232px;
+    position: relative;
+
+    .openToggleButton {
+      min-width: $modal-width;
+    }
+
+    .toggleButton {
+      height: 100%;
+      padding: 0 24px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        text-transform: uppercase;
+        font-family: $Oswald;
+        font-size: 20px;
+        font-weight: 500;
+        color: $whiteColor;
+        margin-right: 16px;
+      }
+      img {
+        width: 18px;
+      }
+    }
+    .modal {
+      background-color: $whiteColor;
+      border: 1px solid $grayColor1;
+      position: absolute;
+      top: $navigationBarHeight - 1;
+      left: 0;
+      z-index: 300;
+      padding: 0;
+      width: $modal-width;
+      overflow-y: auto;
+      .list {
+        height: 100%;
+        margin: 0;
+        list-style-type: none;
+        .item {
+          padding: 8px 30px;
+          color: $darkColor1;
+          font-family: $OswaldLt;
+          font-size: 16px;
+          font-weight: 300;
+          letter-spacing: 0;
+          line-height: 24px;
+          cursor: pointer;
+        }
+        .current {
+          font-family: $Oswald;
+          background-color: $orangeColor3;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $mobile-break-point) {
+      .openToggleButton {
+        min-width: unset;
+      }
+      .modal {
+        width: 100vw;
+      }
+    }
+  }
+
+  .sectionTabsBar {
+    position: relative;
+    padding-left: $horizontalPadding;
+
+    nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .backToMenuButton {
+        margin-right: 48px;
+      }
+
+      .list {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: #449395 transparent;
+
+        .item {
+          margin-right: 48px;
+          height: $navigationBarHeight;
+          cursor: pointer;
+          white-space: nowrap;
+          display: flex;
+          align-items: center;
+          color: white;
+          font-family: $Oswald;
+          font-weight: 500;
+          text-transform: uppercase;
+          font-size: 20px;
+          line-height: 30px;
+          @media only screen and (max-width: $mobile-break-point) {
+            font-size: 16px;
+          }
+        }
+        .current {
+          color: $darkColor1;
+          border-bottom: 0.25em solid $darkColor1;
+        }
+
+        &::-webkit-scrollbar {
+          -webkit-appearance: none;
+          height: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: #449395;
+        }
+      }
+    }
+    @media only screen and (max-width: $minmargin-break-point) {
+      padding-left: $minHorizontalPadding;
+    }
+  }
+
+  .emptyBar {
+    @include bar;
+    justify-content: space-between;
+    padding: 0 $horizontalPadding;
+    .buttonGroup {
+      height: $navigationBarHeight;
+      display: flex;
+      align-items: center;
+    }
+    @media only screen and (max-width: $minmargin-break-point) {
+      padding: 0 $minHorizontalPadding;
+    }
+  }
+}
+
+//This makes the bar goes down when the admin wordpress bar is present
+.admin-bar {
+  #content {
+    .fixedBar {
+      top: $adminBarHeight + $headerHeight;
+
+      /*The wordpress header height decrese so the fixed bar should go up*/
+      @media only screen and (max-width: $mobile-break-point) {
+        top: $adminBarHeight + $headerHeight - 10px;
+      }
+      @media only screen and (max-width: $mobile-break-point2) {
+        top: $adminBarHeight + $headerHeight - 20px;
+      }
+      @media only screen and (max-width: $mobile-break-point3) {
+        top: $adminBarHeight + $headerHeight - 30px;
+      }
+    }
+  }
+}

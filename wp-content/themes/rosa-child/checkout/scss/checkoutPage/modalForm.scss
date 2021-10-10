@@ -1,0 +1,53 @@
+
+.modalForm {
+  background-color: $whiteColor;
+  width: 400px;
+  border-radius: $borderRadius;
+  position: relative;
+  padding: 24px;
+
+  form {
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    .header {
+      border-bottom: 1px solid $grayColor1;
+      margin-bottom: 24px;
+    }
+
+    .input-container {
+      height: 58px;
+      padding: 16px;
+      border: 1px solid #d4d4d4;
+      cursor: pointer;
+    }
+
+    .input-container.focus {
+      outline: 1px solid $orangeColor;
+    }
+
+    input,
+    textarea,
+    .input-container {
+      margin-bottom: 20px;
+    }
+    input[type='submit'] {
+      width: 100%;
+    }
+    button {
+      width: 100%;
+      color: $orangeColor;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      background-color: transparent;
+      border: solid 1px $grayColor1;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    width: 100%;
+  }
+}

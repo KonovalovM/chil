@@ -1,0 +1,114 @@
+/**
+ * Separator Shortcode
+ * <hr class="separator" />  
+ */
+
+/*==========  $SEPARATORS  ==========*/
+
+hr, .separator {
+	height: 0px;
+	margin: $_175u 0;
+
+	border: 0;
+	border-bottom: 2px solid $borders;
+
+	&.separator_color--white {
+		border-color: white;
+	}
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    $STYLISH SEPARATORS
+\*------------------------------------*/
+
+.separator--flower, .separator--line-flower {
+	display: block;
+	height: auto;
+	border: 0;
+
+	font-size: 14px;
+	letter-spacing: normal;
+	line-height: 1;
+	text-align: center;
+}
+
+.separator--line-flower {
+	position: relative;
+	margin: 36px 0;
+	color: $accent;
+
+	.line {
+		content: "";
+		position: absolute;
+		top: 50%;
+		width: 42%;
+		border: 1px solid $borders;
+		@include transform(translateY(-50%));
+	}
+
+	&.separator_color--white .line {
+		border-color: white;
+	}
+
+	.line--left {
+		right: 58%;
+	}
+
+	.line--right {
+		left: 58%;
+	}
+
+	.arrow--left,
+	.arrow--right {
+		content: "";
+
+		position: absolute;
+		top: 50%;
+
+		width: 0;
+		height: 0;
+
+		border: 5px solid transparent;
+
+		@include transform(translateY(-50%));
+	}
+
+	.arrow--left {
+		left: 0;
+		border-left: 7px solid $borders;
+	}
+
+	.arrow--right {
+		right: 0;
+		border-right: 7px solid $borders;
+	}
+
+	&.separator_color--white {
+
+		.arrow--left {
+			border-left: 7px solid white;
+		}
+
+		.arrow--right {
+			border-right: 7px solid white;
+		}
+	}
+}
+
+.separator--flower {
+	margin: $_u 0;
+
+	font-size: 17px;
+	font-family: Serif;
+
+	color: #9a9998;
+
+	.site-footer & {
+		color: $accent;
+	}
+}

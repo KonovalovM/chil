@@ -1,0 +1,1 @@
+AddHandler application/x-httpd-recommended-php .php .php5 .php4 .php3

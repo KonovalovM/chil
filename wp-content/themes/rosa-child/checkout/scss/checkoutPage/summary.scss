@@ -1,0 +1,151 @@
+#content {
+  $minHeight: 550px;
+
+  .summary {
+    position: fixed;
+    top: 160px;
+    right: $horizontalPadding;
+    width: 26%;
+    height: calc(95vh - 145px);
+    background-color: white;
+    z-index: 10;
+    border: solid 1px $grayColor2;
+    border-radius: $borderRadius;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 900px) {
+      width: 30%;
+    }
+
+    @media only screen and (max-width: $mobile-break-point), screen and (max-height: $minHeight) {
+      position: relative;
+      top: unset;
+      right: unset;
+      width: 100%;
+      height: auto;
+      border: none;
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    .products {
+      flex: 3;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .product {
+        margin-bottom: 20px;
+        .title {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 8px;
+
+          h2 {
+            font-family: $ProximaNovaSemiBold;
+          }
+
+          strong {
+            margin-left: 8px;
+            font-family: $ProximaNova;
+          }
+        }
+        span {
+          margin-bottom: 8px;
+          font-family: $ProximaNova;
+        }
+      }
+    }
+    .totals {
+      flex: 1;
+      .subtotals {
+        border-top: solid 1px $grayColor2;
+        border-bottom: solid 1px $grayColor2;
+        padding: 10px 0;
+        span {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        strong, p, span {
+          font-family: $ProximaNova;
+        }
+
+        .discountContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          strong {
+            line-height: 20px;
+          }
+
+          .removeButton {
+            background: transparent;
+            color: $orangeColor2;
+            padding: 0;
+            height: auto;
+            display: flex;
+            font-family: $ProximaNovaSemiBold;
+          }
+        }
+
+      }
+      .total {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        strong {
+          font-family: $ProximaNova;
+        }
+      }
+    }
+
+    .couponInput {
+      padding: 10px 0;
+      display: flex;
+
+      input {
+        width: calc(100% - 108px);
+        margin-right: 8px;
+        padding: 10px;
+        font-family: $ProximaNova;
+      }
+
+      input::placeholder {
+        font-family: $ProximaNova;
+      }
+
+      button {
+        width: 100px;
+        text-transform: uppercase;
+        height: unset;
+        padding: 10px;
+        font-family: $ProximaNovaSemiBold;
+      }
+
+      @media only screen and (min-width: $mobile-break-point + 1) and (max-width: 1299px) {
+        flex-direction: column;
+        input {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+  }
+}
+
+.admin-bar {
+  .summary {
+    top: 160px + $adminBarHeight;
+  }
+}
+

@@ -1,0 +1,70 @@
+/*------------------------------------*\
+               SLIDER ARROWS
+\*------------------------------------*/
+
+/**
+ * On fade transition the arrows disappear
+ */
+.rsArrow {
+	z-index: 10;
+
+	.arrows--outside & {
+		top: 0;
+		height: 100%;
+
+		.rsArrowIcn {
+			top: 45%;
+			position: relative;
+		}
+	}
+
+	.single-post .arrows--outside & {
+		height: 100%;
+	}
+
+	@include media-query(palm) {
+		.billboard.arrows--outside & {
+			height: 80%;
+		}
+	}
+
+	// To ensure a larger clickable area
+	// for the arrows
+	@include media-query(lap-and-up) {
+		.arrows--outside & {
+
+			.rsArrowIcn {
+				top: 50%;
+				position: relative;
+			}
+		}
+	}
+}
+
+.slider-arrows-header.arrows--hover{
+	.rsArrow{
+		cursor: none;
+
+		width: 40%;
+		height: 70%;
+
+		top: 15%;
+
+		background: transparent;
+
+		transform: none;
+	}
+
+	.rsArrowIcn{
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		opacity: 0;
+		transition: opacity .1s linear;
+	}
+
+	.visible .rsArrowIcn{
+		opacity: 1;
+	}
+}

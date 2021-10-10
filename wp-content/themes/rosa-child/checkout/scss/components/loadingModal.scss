@@ -1,0 +1,13 @@
+.loadingModal {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $orangeColor;
+  border-radius: $borderRadius;
+  padding: 50px;
+  user-select: none;
+  h1 {
+    color: $whiteColor;
+  }
+}

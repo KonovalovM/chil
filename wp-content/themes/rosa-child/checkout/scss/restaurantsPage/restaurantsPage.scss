@@ -1,0 +1,42 @@
+#content {
+  $pageHeight: $headerHeight - 15px;
+  .restaurantsPage {
+    @include pagePositionWithoutNavBar;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - #{$pageHeight});
+    box-sizing: border-box;
+
+    .main-content {
+      width: 75%;
+    }
+    .sidebar {
+      width: 33%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .buttonGroup {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 24px;
+      background-color: $lightBlueColor;
+    }
+
+    @media only screen and (max-width: $header-break-point) {
+      flex-direction: column;
+      height: unset;
+
+      .main-content {
+        width: 100%;
+        height: 300px;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+    }
+  }
+}

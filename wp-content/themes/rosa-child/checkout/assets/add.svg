@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 61.1 (101010) - https://sketch.com -->
+    <title>7FC98DE9-F489-49C7-B982-E784CA95CA33</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="2-Menu" transform="translate(-577.000000, -1776.000000)" stroke="#FFFFFF">
+            <g id="menus/drinks" transform="translate(121.000000, 1716.000000)">
+                <g id="button_58px-button/58px_lefticon" transform="translate(441.000000, 43.000000)">
+                    <g id="icons/add" transform="translate(15.000000, 17.000000)">
+                        <g id="Group">
+                            <circle id="Oval" cx="12" cy="12" r="10"></circle>
+                            <line x1="6" y1="12" x2="18" y2="12" id="Line"></line>
+                            <line x1="12" y1="6" x2="12" y2="18" id="Line"></line>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

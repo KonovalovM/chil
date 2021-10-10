@@ -1,0 +1,149 @@
+#content {
+  $minHeight: 550px;
+
+  .checkoutPage {
+    @include pageTopPositionWithEmptyNavBar;
+    padding-bottom: 70px;
+    background-color: $ligthColor1;
+
+    .mainContainer {
+      margin-top: 20px;
+      display: flex;
+
+      @media only screen and (max-width: $mobile-break-point), screen and (max-height: $minHeight) {
+        flex-direction: column;
+      }
+    }
+
+    .fields {
+      padding-left: $horizontalPadding;
+      margin-bottom: 60px;
+      width: 60%;
+
+      section {
+        margin-bottom: 40px;
+        max-width: 900px;
+      }
+
+      h2 {
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        margin-bottom: 12px;
+      }
+
+      select {
+        margin-bottom: 12px;
+      }
+
+      .toggle {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 12px;
+
+        &.two-column {
+          button {
+            width: 49%;
+            margin-right: 2%;
+          }
+        }
+
+        &.three-column {
+          button {
+            width: 32%;
+            margin-right: 2%;
+          }
+        }
+
+        button {
+          text-transform: uppercase;
+          margin-bottom: 8px;
+        }
+
+        button:last-child {
+          margin-right: 0px;
+        }
+
+        @media only screen and (max-width: $mobile-break-point) {
+          max-width: unset;
+        }
+      }
+
+      .guestUserInfoFields {
+        input {
+          margin-bottom: 12px;
+        }
+      }
+
+      @media only screen and (max-width: $mobile-break-point), screen and (max-height: $minHeight) {
+        padding: 0 $minHorizontalPadding 0 $minHorizontalPadding;
+        margin-bottom: 40px;
+        width: 100%;
+      }
+    }
+
+    .summaryWrapper {
+      position: relative;
+      width: 26%;
+      margin-right: $horizontalPadding;
+
+      @media only screen and (max-width: 900px) {
+        width: 30%;
+      }
+
+      @media only screen and (max-width: $mobile-break-point), screen and (max-height: $minHeight) {
+        width: 100%;
+        padding: 0 $minHorizontalPadding 0 $minHorizontalPadding;
+      }
+    }
+
+    .submit {
+      max-width: 900px;
+
+      .errorMessage {
+        margin-bottom: 40px;
+      }
+
+      .backButton, input[type=submit] {
+        width: 50%;
+        white-space: normal;
+        text-transform: uppercase;
+      }
+
+      input[type=submit] {
+        width: 100%;
+        margin-bottom: 12px;
+        padding: 0 2%;
+      }
+
+      .backButton {
+        background-color: transparent;
+        border: none;
+        width: 190px;
+        padding: 0;
+
+        span {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 30px;
+            height: 30px;
+            margin-right: 14px;
+          }
+
+          span {
+            color: $darkColor1;
+            text-transform: uppercase;
+            font-family: $Oswald;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

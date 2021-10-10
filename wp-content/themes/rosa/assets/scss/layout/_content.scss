@@ -1,0 +1,38 @@
+.container {
+	max-width: 1104px;
+	margin: 0 auto;
+
+	padding: 0 $_u;
+
+	@extend .cf;
+
+	@include media-query(palm) {
+		margin: 0 $_u2;
+		padding: 0;
+	}
+}
+
+.page-content {
+	@include media-query(lap-and-up) {
+		&.has-sidebar {
+			width: 100%;
+			margin-right: -$sidebar-width;
+
+			float: left;
+
+			&:after {
+				content: "";
+
+				position: absolute;
+				top: -1px;
+				bottom: 0;
+				right: $sidebar-width;
+			}
+
+			.page-content__wrapper {
+				padding-right: 48px;
+				margin-right: $sidebar-width;
+			}
+		}
+	}
+}

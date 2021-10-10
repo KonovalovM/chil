@@ -1,0 +1,54 @@
+$widthModal: 400px;
+
+.confirmModal {
+  background-color: white;
+  border-radius: $borderRadius;
+  width: $widthModal;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    position: relative;
+  }
+
+  .closeButton {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 0;
+    top: 24px;
+    right: 24px;
+    z-index: 200;
+  }
+
+  .closeButton:hover {
+    background-color: transparent;
+  }
+
+  .info {
+    padding: 0 24px;
+    margin-top: 48px;
+
+    p {
+      margin: 12px 0 0 0;
+    }
+  }
+
+  .buttonContainers {
+    margin: 16px 24px 24px 24px;
+
+    button {
+      height: 58px;
+      width: 100%;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+  }
+
+  @media only screen and (max-width: $widthModal) {
+    width: 100%;
+  }
+}

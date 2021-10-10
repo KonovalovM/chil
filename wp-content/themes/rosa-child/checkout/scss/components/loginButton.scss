@@ -1,0 +1,53 @@
+#content {
+  .loginButton {
+    position: relative;
+    height: 25px;
+
+    button {
+      background-color: transparent;
+      border: none;
+      position: relative;
+      height: 100%;
+      padding: 0;
+      img {
+        height: 100%;
+      }
+    }
+
+    .menu {
+      display: none;
+      background-color: $whiteColor;
+      position: absolute;
+      top: 41px;
+      right: -20px;
+      z-index: 300;
+      padding: 14px;
+      width: 140px;
+      border: solid 1px $grayColor1;
+      border-top: solid 0.25em $darkColor1;
+
+      div {
+        color: $darkColor1;
+        font-family: $ProximaNovaSemiBold;
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 12px 0 12px 0;
+        text-align: center;
+        a,
+        &.link {
+          color: $darkColor2;
+          cursor: pointer;
+        }
+        a:hover,
+        &.link:hover {
+          color: $orangeColor;
+        }
+      }
+      &.visible {
+        display: block;
+      }
+    }
+  }
+}

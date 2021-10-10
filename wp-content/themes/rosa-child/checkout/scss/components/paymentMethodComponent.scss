@@ -1,0 +1,31 @@
+#content {
+  .paymentMethodComponent {
+    display: flex;
+    img {
+      width: 60px;
+      height: 56px;
+      object-fit: contain;
+    }
+    .info {
+      margin-left: 16px;
+      display: flex;
+      flex-direction: column;
+      small {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+
+    @media only screen and (max-width: 320px) {
+      flex-direction: column;
+      width: 100%;
+      .info {
+        margin-left: 0;
+        margin-top: 16px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}

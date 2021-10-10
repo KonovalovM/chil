@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="152px" height="152px" viewBox="0 0 152 152" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 61.1 (101010) - https://sketch.com -->
+    <title>462E91F3-46A8-4661-85C5-B39DB88726AB</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3-Product-builder" transform="translate(-714.000000, -745.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1440" height="1024"></rect>
+            <g id="Product/food-Copy-5-Product/option" transform="translate(714.000000, 745.000000)" stroke="#3B4951">
+                <g id="product/option_food-product/option_skip">
+                    <circle id="Mask" cx="75" cy="76" r="75"></circle>
+                    <g id="icons/cross" transform="translate(41.705321, 42.205321)">
+                        <path d="M3.41060513e-13,1.70530257e-13 L69,69 M69,0 L3.26849658e-13,69"></path>
+                    </g>
+                </g>
+            </g>
+            <rect id="popupbg" x="0" y="0" width="1440" height="1024"></rect>
+        </g>
+    </g>
+</svg>

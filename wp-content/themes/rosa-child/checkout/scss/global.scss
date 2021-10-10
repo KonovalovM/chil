@@ -1,0 +1,224 @@
+@import './proximanova';
+$adminBarHeight: 32px;
+$headerHeight: 90px;
+$navigationBarHeight: 57px;
+
+$horizontalPadding: 8.3%;
+$minHorizontalPadding: 4%;
+
+$minmargin-break-point: 900px;
+$header-break-point: 899px;
+$mobile-break-point: 768px;
+$mobile-break-point2: 375px;
+$mobile-break-point3: 320px;
+
+$Oswald: 'Oswald Medium';
+$OswaldRegular: 'Oswald Regular';
+$OswaldLt: 'Oswald Lt';
+$RobotoSlab: 'RobotoSlab Regular';
+$RobotoSlabLight: 'RobotoSlab Lt';
+$ProximaNovaSemiBold: 'ProximaNova SemiBold';
+$ProximaNova: 'proxima-nova';
+
+
+$whiteColor: #FFFFFF;
+$ligthColor1: #FDFFFB;
+$lightColor2: #f7a890;
+$darkColor1: #3B4951;
+$darkColor2: #515150;
+$lightBlueColor: #64C4C6;
+$lightBlueColor2: #C0E7E8;
+$orangeColor: #F05323;
+$orangeColor2: #c44324;
+$orangeColor3: #ffece8;
+$lightOrangeColor: #FEEDE8;
+$grayColor1: #979797;
+$grayColor2: #D8D8D8;
+
+$borderRadius: 8px;
+$pageFixedHeight: calc(100vh - 145px);
+
+#content, .ReactModal__Content {
+	h1, h2, h3, p, span, strong, small{
+		margin: 0;
+	}
+
+	h1, h2{
+		color: $darkColor1;
+		font-family: $Oswald;
+		text-transform: uppercase;
+	}
+
+	h1{
+		font-size: 32px;
+		font-weight: 500;
+		line-height: 48px;
+	}
+
+	h2{
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 32px;
+	}
+
+	h3, p, span, small {
+		color: $darkColor2;
+		font-family: $RobotoSlabLight;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 24px;
+		text-transform: initial;
+	}
+
+	small{
+		display: block;
+	}
+
+	strong{
+		color: $darkColor1;
+		font-family: $RobotoSlab;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 32px;
+		display: block;
+	}
+
+	button, input[type="submit"], input[type="button"] {
+		color: $whiteColor;
+		background-color: $orangeColor;
+		border: none;
+		font-family: $Oswald;
+		font-size: 16px;
+		letter-spacing: 1px;
+		line-height: 24px;
+		text-align: center;
+		height: 58px;
+	}
+
+	button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+	  background-color: $orangeColor2;
+	  color: $whiteColor;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="password"] {
+		padding: 16px;
+		border: 1px solid #d4d4d4;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="tel"]::placeholder,
+	input[type="password"]::placeholder {
+		color: #515150;
+		font-family: $RobotoSlabLight;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 21px;
+		text-transform: none;
+	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0;
+	}
+
+	input[type=number] {
+	  -moz-appearance: textfield;
+	}
+
+	.errorMessage {
+		color: red;
+		font-weight: bold;
+	}
+
+	.blueButton {
+    background-color: white;
+    color: #3B4A51;
+    border: solid 1px $grayColor2;
+
+    &:hover {
+    	border: 1px solid $grayColor2;
+  		background-color: #EDF8F8;
+  		color: rgb(59, 73, 81);
+    }
+
+    &.selected {
+    	background-color: #C1E7E7;
+    	border: 1px solid #3B4951;
+    	color: $darkColor1;
+    }
+
+    &.selected:hover {
+    	background-color: $lightBlueColor;
+    }
+  }
+}
+
+
+@mixin pagePositionWithoutNavBar {
+	padding-top: 15px;
+
+	@media screen and (max-width: $header-break-point) {
+    padding-top: 90px;
+  }
+}
+
+@mixin pageTopPositionWithIndicatorNavBar {
+	padding-top: 74px;
+
+	@media screen and (max-width: $header-break-point) {
+    padding-top: 145px;
+  }
+ 	@media screen and (max-width: $mobile-break-point) {
+    padding-top: 172px;
+  }
+  @media screen and (max-width: $mobile-break-point2) {
+    padding-top: 162px;
+  }
+  @media screen and (max-width: $mobile-break-point3) {
+    padding-top: 152px;
+  }
+}
+
+@mixin pageTopPositionWithEmptyNavBar {
+	padding-top: 74px;
+
+	@media screen and (max-width: $header-break-point) {
+    padding-top: 145px;
+  }
+ 	@media screen and (max-width: $mobile-break-point) {
+    padding-top: 136px;
+  }
+  @media screen and (max-width: $mobile-break-point2) {
+    padding-top: 126px;
+  }
+  @media screen and (max-width: $mobile-break-point3) {
+    padding-top: 116px;
+  }
+}
+
+@mixin pageTopPositionWithBagNavBar {
+	padding-top: 74px;
+
+	@media screen and (max-width: $header-break-point) {
+    padding-top: 147px;
+  }
+ 	@media screen and (max-width: $mobile-break-point) {
+    padding-top: 220px;
+  }
+  @media screen and (max-width: $mobile-break-point2) {
+    padding-top: 210px;
+  }
+  @media screen and (max-width: $mobile-break-point3) {
+    padding-top: 200px;
+  }
+}
+
+
+@function getAsset($fileName) {
+	@return '/wp-content/themes/rosa-child/checkout/assets/'+$fileName;
+}

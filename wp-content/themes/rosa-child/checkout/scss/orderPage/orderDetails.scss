@@ -1,0 +1,84 @@
+$paddingValue: 16px;
+
+#content {
+  .orderDetails {
+    height: 100%;
+    overflow: auto;
+
+    h3 {
+      color: $darkColor1;
+      font-family: $Oswald;
+      text-transform: uppercase;
+      color: $darkColor2;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 24px;
+    }
+
+    .orderDetailsGroup {
+      padding: $paddingValue;
+      background-color: $whiteColor;
+
+      .buttonWrapper {
+        display: block;
+        margin-top: 16px;
+        width: 100%;
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    .dark {
+      background-color: $ligthColor1;
+    }
+
+    .orderProductComponent {
+      margin: 16px 0;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      small {
+        font-size: 11px;
+        line-height: 16px;
+      }
+    }
+
+    .subtotals {
+      border-top: 2px solid $grayColor2;
+      .subtotalsContainer {
+        margin: $paddingValue;
+        padding-bottom: $paddingValue;
+        border-bottom: 2px solid $grayColor2;
+
+        small,
+        strong {
+          color: $darkColor2;
+        }
+
+        .info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .disclaimer {
+      margin-top: 24px;
+      small,
+      a {
+        font-size: 11px;
+        line-height: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+#content {
+  .profilePage {
+    @include pageTopPositionWithEmptyNavBar;
+    .content {
+      padding-top: 25px;
+      width: 100%;
+      background-color: $ligthColor1;
+      min-height: $pageFixedHeight;
+
+      .wrapper {
+        margin-top: 45px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media screen and (max-width: $header-break-point) {
+        .wrapper {
+          padding: 0 $minHorizontalPadding;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+stages:
+  - staging
+  - staging-prod
+  - production
+
+staging:
+  stage: staging
+  image: fahrenheitmarketing/dev-tools:0.0.12
+  script:
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - ssh deploy@chilantro.fmservers.io "cd /home/deploy/deployments/chilantro/chilantro-staging && sudo -u admin with_ssh_agent thermostat deploy"
+  only:
+    - staging
+
+staging-prod:
+  stage: staging
+  image: fahrenheitmarketing/dev-tools:0.0.12
+  script:
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - ssh deploy@chilantro.fmservers.io "cd /home/deploy/deployments/chilantro/chilantro-staging-prod && sudo -u admin with_ssh_agent thermostat deploy"
+  only:
+    - staging-prod
+
+production:
+  stage: production
+  image: fahrenheitmarketing/dev-tools:0.0.12
+  script:
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - ssh deploy@chilantro.fmservers.io "cd /home/deploy/deployments/chilantro/chilantro-production && sudo -u admin with_ssh_agent thermostat deploy"
+  only:
+    - production

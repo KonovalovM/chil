@@ -1,0 +1,36 @@
+#content {
+  .checkoutPage {
+    .header {
+      width: 100%;
+      background-size: cover;
+      background-repeat: 'no-repeat';
+
+      .overlay {
+        width: 100%;
+        overflow: auto;
+        padding: 40px $horizontalPadding;
+        background: rgba(0, 0, 0, 0.5);
+
+        .info {
+          width: 60%;
+
+          h1 {
+            color: white;
+            margin: 0;
+          }
+          small {
+            display: block;
+            color: white;
+          }
+        }
+
+        @media only screen and (max-width: $mobile-break-point) {
+          padding: 40px $minHorizontalPadding;
+          .info {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

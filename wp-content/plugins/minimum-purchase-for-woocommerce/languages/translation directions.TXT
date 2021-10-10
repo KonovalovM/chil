@@ -1,0 +1,49 @@
+----------------------------
+I. PLUGIN TRANSLATION
+----------------------------
+(PLEASE place your translated PO file BACK into **this** LANGUAGES folder on your server...)
+
+please refer to the excellent tutorial at::
+
+https://web.archive.org/web/20150817183915/http://www.inkthemes.com/how-to-create-a-po-file-of-your-themes-i-e-translation-of-wordpress-theme-in-multiple-languages/
+
+
+
+http://betterwp.net/wordpress-tips/create-pot-file-using-poedit/
+
+translation file naming samples:
+
+vtprd-en_EN.po
+vtprd-en_EN.mo
+
+vtprd-fr_FR.po
+vtprd-fr_FR.mo
+
+************************************************
+************************
+
+++  The translated ** PO file ** should go to  /wp-content/plugins/pricing-deals-for-woocommerce/languages
+
+++  BE SURE to ALSO:
+- update the wp_config.php file. Sample: (‘WPLANG’, ‘fr_FR’);
+- in wp-admin/settings/general, select you language under "Site Language"
+
+************************
+************************************************
+
+
+EXAMPLE:
+- in wp-config.php
+	define('WPLANG', 'en_EN');
+- in wp-admin/settings, saved 'Site Language' as en_EN
+
+- Edited the FREE version POT, changed
+	"Error =>" to "Mistake =>"
+	"</span>Minimum Purchase" to "</span>Minimum Purchase (translated)"
+
+- Saved and created .mo file
+
+- Saved .mo file as vtmin-en_EN.mo, placed in minimum-purchase-for-woocommerce/languages folder on SERVER
+
+TEST 1 - translation functions correctly with only FREE version active
+TEST 2 - translation functions *correctly* with *both* FREE and PROD versions active

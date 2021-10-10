@@ -1,0 +1,44 @@
+#content {
+  .toggleMobileBag {
+    width: 100%;
+    background-color: $lightOrangeColor;
+    display: none;
+    padding: 5px $minHorizontalPadding;
+    cursor: pointer;
+
+    .info {
+      flex: 2;
+      overflow: hidden;
+      margin-right: 12px;
+      h2 {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 16px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-family: $ProximaNova;
+        font-weight: bold;
+      }
+      span {
+        display: flex;
+      }
+      p {
+        font-size: 13px;
+        margin: 0 8px 0 0;
+        line-height: 16px;
+        font-family: $ProximaNova;
+      }
+    }
+    strong {
+      margin-right: 8px;
+      font-family: $ProximaNova;
+    }
+
+    @media only screen and (max-width: $mobile-break-point) {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

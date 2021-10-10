@@ -1,0 +1,126 @@
+/*--------------------------------*\
+               HEADER
+\*--------------------------------*/
+
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	background-color: white;
+	@include transition(all .3s cubic-bezier(0.86, 0, 0.07, 1));
+
+	.header--transparent & {
+		background-color: transparent;
+
+		a.nav-trigger {
+			color: white;
+		}
+
+		.lt-ie9 &, .ie9 & {
+			background-color: white;
+
+			a.nav-trigger {
+				color: black;
+			}
+		}
+	}
+
+	&.headroom--not-top {
+		background-color: white;
+
+		.site-logo-img--dark{
+			display: block;
+		}
+
+		.site-logo--text{
+			color: $dark;
+		}
+
+		.site-logo-img--light{
+			display: none;
+		}
+
+		a.nav-trigger {
+			color: black;
+		}
+	}
+}
+
+/*----------------------------------------*\
+    $TITLE/LOGO
+\*----------------------------------------*/
+.site-title {
+	@extend .flexbox;
+
+	height: $_3u;
+	margin: 0;
+
+	@include media-query(palm){
+		padding: 0 $_2u;
+	}
+}
+
+.site-logo {
+	@extend .flexbox__item;
+
+	width: 100%;
+	img {
+		display: block;
+		max-height: 100%;
+
+		@include media-query(palm) {
+			margin: 0 auto;
+		}
+	}
+
+	.site-logo-img--light{
+		display: none;
+	}
+
+	&.using-retina-logo img{
+		max-width: 50%;
+	}
+}
+
+.header--transparent{
+
+	.site-logo-img--light{
+		display: block;
+	}
+
+	.site-logo-img--dark{
+		display: none;
+	}
+
+	.lt-ie9 &, .ie9 & {
+
+		.site-logo-img--light{
+			display: none;
+		}
+
+		.site-logo-img--dark{
+			display: block;
+		}
+	}
+}
+
+a.site-logo--text{
+	font-weight: 700;
+	color: $dark;
+
+	@include transition(color .2s linear);
+
+	.header--transparent & {
+		color: white;
+	}
+
+	.lt-ie9 .header--transparent &, .ie9 .header--transparent & {
+			color: black;
+	}
+
+	@include media-query(palm){
+		text-align: center;
+	}
+}

@@ -1,0 +1,28 @@
+#content {
+  .orderPage {
+    @include pageTopPositionWithEmptyNavBar;
+
+    .content {
+      display: flex;
+      width: 100%;
+      height: $pageFixedHeight;
+
+      .mainContent {
+        width: 70%;
+      }
+
+      .sidebar {
+        width: 30%;
+      }
+
+      @media only screen and (max-width: $mobile-break-point) {
+        .mainContent,
+        .sidebar {
+          width: 100%;
+        }
+        flex-direction: column;
+        height: unset;
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+<?php
+
+add_action( 'init', function() {
+    $labels = array(
+        'name'                  => _x( 'Restaurants', 'Post Type General Name', 'rosa' ),
+        'singular_name'         => _x( 'Restaurant', 'Post Type Singular Name', 'rosa' ),
+        'menu_name'             => __( 'Restaurants', 'rosa' ),
+        'name_admin_bar'        => __( 'Restaurants', 'rosa' ),
+        'archives'              => __( 'Restaurant Archives', 'rosa' ),
+        'attributes'            => __( 'Restaurant Attributes', 'rosa' ),
+        'parent_item_colon'     => __( 'Parent Restaurant:', 'rosa' ),
+        'all_items'             => __( 'All Items', 'rosa' ),
+        'add_new_item'          => __( 'Add New Restaurant', 'rosa' ),
+        'add_new'               => __( 'Add New', 'rosa' ),
+        'new_item'              => __( 'New Restaurant', 'rosa' ),
+        'edit_item'             => __( 'Edit Restaurant', 'rosa' ),
+        'update_item'           => __( 'Update Restaurant', 'rosa' ),
+        'view_item'             => __( 'View Restaurant', 'rosa' ),
+        'view_items'            => __( 'View Restaurants', 'rosa' ),
+        'search_items'          => __( 'Search Item', 'rosa' ),
+        'not_found'             => __( 'Not found', 'rosa' ),
+        'not_found_in_trash'    => __( 'Not found in Trash', 'rosa' ),
+        'featured_image'        => __( 'Featured Image', 'rosa' ),
+        'set_featured_image'    => __( 'Set featured image', 'rosa' ),
+        'remove_featured_image' => __( 'Remove featured image', 'rosa' ),
+        'use_featured_image'    => __( 'Use as featured image', 'rosa' ),
+        'insert_into_item'      => __( 'Insert into restaurant', 'rosa' ),
+        'uploaded_to_this_item' => __( 'Uploaded to this restaurant', 'rosa' ),
+        'items_list'            => __( 'Restaurants list', 'rosa' ),
+        'items_list_navigation' => __( 'Restaurants list navigation', 'rosa' ),
+        'filter_items_list'     => __( 'Filter restaurants list', 'rosa' ),
+    );
+
+    $args = array(
+        'label'                 => __( 'Restaurants', 'rosa' ),
+        'description'           => __( 'A list of restaurants', 'rosa' ),
+        'labels'                => $labels,
+        'supports'              => array('title'),
+        'taxonomies'            => array(),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 4,
+        'show_in_admin_bar'     => true,
+        'menu_icon'             => 'dashicons-clipboard',
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => false,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'page',
+    );
+    register_post_type( 'restaurant', $args );
+}, 0 );
+
+
+if( function_exists('acf_add_local_field_group') ) {
+    acf_add_local_field_group(array(
+        'key' => 'group_5e56cec37686d',
+        'title' => 'Restaurants',
+        'fields' => array(
+            array(
+                'key' => 'field_5e5e9706c9ret34',
+                'label' => 'Olo ID',
+                'name' => 'olo_id',
+                'type' => 'text',
+                'instructions' => 'The ID of the Olo API',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5e5e9706c9ef6',
+                'label' => 'Image',
+                'name' => 'image',
+                'type' => 'image',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            )
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'restaurant',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => array(
+            0 => 'permalink',
+            1 => 'the_content',
+            2 => 'excerpt',
+            3 => 'custom_fields',
+            4 => 'discussion',
+            5 => 'comments',
+            6 => 'revisions',
+            7 => 'slug',
+            8 => 'author',
+            9 => 'format',
+            10 => 'page_attributes',
+            11 => 'featured_image',
+            12 => 'categories',
+            13 => 'tags',
+            14 => 'send-trackbacks',
+        ),
+        'active' => true,
+        'description' => '',
+    ));
+}

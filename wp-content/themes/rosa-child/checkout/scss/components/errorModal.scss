@@ -1,0 +1,29 @@
+.errorModal {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $whiteColor;
+  border-radius: $borderRadius;
+  padding: 50px;
+  position: relative;
+  border: solid 1px $darkColor1;
+  h2 {
+    color: $darkColor1;
+  }
+  button {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    padding: 0;
+    top: 24px;
+    right: 24px;
+    z-index: 200;
+  }
+  button:hover {
+    background-color: transparent;
+  }
+}

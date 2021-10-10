@@ -1,0 +1,50 @@
+{
+	"restaurantId": 12344,
+	"simpleBasketProduct": {
+		"productid": 1223,
+		"quantity": 1,
+		"description": ""
+	},
+	"electionBasketProduct": {
+		"productid": 1234,
+		"quantity": 1,
+		"customdata": "text",
+		"description": "",
+		"choices": [
+			{
+				"choiceid":1,
+				"quantity":1,
+				"customfields":[]
+			}
+		]
+	},
+	"complexBasketProduct": {
+		"productid": 1234,
+		"quantity":1,
+		"specialinstructions":"",
+		"customdata":"text",
+		"description": "",
+		"choices":[
+			{
+				"choiceid":12,
+				"quantity":1,
+				"customfields":[]
+			},
+			{
+				"choiceid":34,
+				"quantity":1,
+				"customfields":[]
+			},
+			{
+				"choiceid":45,
+				"quantity":1,
+				"customfields":[]
+			}
+		]
+	},
+	"userData": {
+		"email": "an-email-of-an-valid-user",
+		"password": "the-password"
+	},
+	"orderId": "a-valid-order-id"
+}

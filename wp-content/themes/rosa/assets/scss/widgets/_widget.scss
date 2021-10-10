@@ -1,0 +1,241 @@
+/*---------------------------------*\
+               $WIDGET
+\*---------------------------------*/
+
+.widget {
+	margin-bottom: $_15u;
+	padding-bottom: $_15u;
+
+	select {
+		max-width: 100%;
+	}
+
+	a {
+		color: $dark;
+
+		&:hover{
+			color: $accent;
+		}
+	}
+
+	.sidebar--main & {
+		border-bottom: 2px solid $borders;
+
+		&:last-child {
+			border: 0;
+		}
+	}
+}
+
+.widget--main {
+	@include rem(margin-bottom, $_u);
+}
+
+.widget-title {
+	@include font-size($h4-size);
+
+	margin: 0;
+	margin-bottom: $_u;
+}
+
+.widget--sidebar__title {
+	@extend .heading;
+}
+
+.widget--footer {
+	@include rem(margin-bottom, $_u2);
+
+	.widget__title {
+		color: white;
+	}
+}
+
+.widget--footer__title {
+	@extend .heading;
+
+	em {
+		color: $accent;
+		font-style: normal;
+	}
+}
+
+/*-----------------------------------*\
+               TAG CLOUD
+\*-----------------------------------*/
+
+.widget_tag_cloud {
+
+	.wp-tag-cloud {
+		@extend .btn-list;
+	}
+
+	a {
+		@extend .btn;
+		@extend .btn--negative;
+		@include rem(font-size, 12px !important);
+	}
+
+	&.widget--main {
+
+		a {
+			background-color: #eee;
+			color: #555;
+		}
+	}
+}
+
+/*----------------------------------------*\
+    $SEARCH
+\*----------------------------------------*/
+.widget_search {
+	.form-search {
+		width: 100%;
+		@include rem(height, 36px);
+	}
+
+	.search-query {
+
+	}
+}
+
+/*-----------------------------------------*\
+               WIDGET NAV MENU
+\*-----------------------------------------*/
+
+// rename and @extend this
+
+/*ul*/
+.menu--list {
+	margin: 0;
+	list-style: none;
+	@include rem(margin-top, -$_u4);
+
+	> li {
+
+		a {
+			display: block;
+			@include rem(padding, $_u4 0);
+		}
+	}
+}
+
+.widget_nav_menu, .widget_categories, .widget_meta {
+
+	ul {
+		@extend .menu--list;
+		@extend .multi-list;
+		@extend .two-cols;
+
+		ul {
+			display: none;
+		}
+	}
+}
+
+.widget_archive, .widget_pages, .widget_recent_comments, .widget_rss, .widget_recent_posts, .widget_recent_entries {
+
+	ul {
+		@extend .menu--list;
+
+		ul {
+			display: none;
+		}
+	}
+}
+
+.widget--sidebar__title .rsswidget {
+
+	img {
+		display: none;
+	}
+}
+
+.widget_rss .widget--footer__title .hN {
+	color: $accent;
+}
+
+.widget {
+
+	select {
+		width: 100%;
+		@include rem(padding-left, $_u4);
+		// ??? @include rem(height, $_u + $_u2);
+	}
+}
+
+.widget_image img.alignnone {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.widget_wpgrade_posts_slider_widget {
+	.article--slider {
+		margin-bottom: 0;
+	}
+
+	.rsArrow {
+		top: 30%;
+
+		.rsArrowIcn {
+			height: 28px;
+			width: 28px;
+		}
+	}
+}
+
+/**
+ * Maybe it's good, maybe it's not...
+ */
+
+.widget_categories, .widget_recent_comments, .widget_archive {
+	ul > li a {
+		display: inline-block !important;
+	}
+}
+
+//.recentcomments{
+//    @include rem(padding, $_u2 0);
+//}
+
+@include media-query(palm) {
+	.widget_recent_entries, .widget_recent_comments, .widget_rss, .widget_categories {
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+.widget_rss li > cite:before {
+	content: '-';
+	margin-right: 5px;
+}
+
+.rss-date {
+	font-style: italic;
+}
+
+.widget--footer.widget_text .wp-caption-text {
+	background-color: $dark;
+	color: $light;
+}
+
+.tagcloud a {
+	color: white;
+	margin-bottom: 2px;
+}
+
+/*------------------------------------*\
+    $FOOTER WIDGETS
+\*------------------------------------*/
+
+.sidebar--footer {
+	color: white;
+
+	.widget__title {
+		color: white;
+	}
+
+	a {
+		color: white;
+	}
+}
